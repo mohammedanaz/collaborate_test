@@ -1,6 +1,7 @@
 from django.contrib import admin
-
-# Register your models here.
 from .models import CustumUser
 
-admin.site.register(CustumUser)
+class CustumUserAdmin(admin.ModelAdmin):
+    list_display = ['name']  
+
+admin.site.register(CustumUser, CustumUserAdmin)
